@@ -20,7 +20,6 @@ export const create = async(req,res)=> {                 // API to insert data i
 }
 }
 
-
 // API to fetch all the data from mongodb
 
 export const getAll = async(req,res)=>{                 // API to fetch all the data from mongodb
@@ -66,12 +65,38 @@ export const update = async(req,res)=>{           //API will udpate one user as 
         const id = req.params.id;
         const userExist = await User.findById(id);
         if(!userExist){
-            return res.status(401 )
+            return res.status(401).json({msg:"User not found !"});
+
         }
+
+        const updatedData = await User.findByIdAndUpdate(id,req.body,{new:true});
+        res.status(200).json(updatedData);
+
 
     } catch (error) {
 
         res.status(500).json({error:error});
         
+    }
+}
+
+
+
+//API will DELETE user as id provided
+
+export  const deleteUser = async(req,res)=>{
+    
+    try {
+
+        const id = req.params.id;
+        const userExist = await User.findById(id);
+        if(!userExist){
+            return res.status(404).json({msg:"User not exist"});
+        }
+        await User.findByIdAndDelete(id);
+        res.status(200).json({msg:"User deleted successfully"});
+        
+    } catch (error) {
+        res.status(500).json({error:error});
     }
 }

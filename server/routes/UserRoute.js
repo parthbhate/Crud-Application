@@ -1,5 +1,5 @@
 import express from "express";
-import { create ,getAll, getOne } from "../controller/UserController.js";
+import { create ,deleteUser,getAll, getOne, update } from "../controller/UserController.js";
 
 const route = express.Router();
 
@@ -9,6 +9,8 @@ route.get("/getall",getAll);      // this will fetch all the user data that is p
 
 route.get("/getone/:id",getOne); // this will fetch only One user data  the user data that is present inside the database
 
-//route.put("/update/:id",Update);
+route.put("/update/:id",update);
 
+route.delete("/delete/:id",deleteUser)
 export default route;
+
