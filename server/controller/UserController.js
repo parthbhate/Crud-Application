@@ -14,7 +14,7 @@ export const create = async(req,res)=> {                 // API to insert data i
             return res.status(404).json({ msg: " user data not found "});
         }
         const savedData = await userData.save();
-        res.status(200).json(savedData);
+        res.status(200).json({ msg: " user created "});
     } catch (error ){
     res.status(500).json({error:error});
 }
@@ -57,7 +57,7 @@ export const getOne = async (req,res) =>{          //API will fetch one user as 
 
 }
 
-//API will udpate one user as id provided 
+//API will  udpate  one user as id provided 
 
 export const update = async(req,res)=>{           //API will udpate one user as id provided 
     try {
@@ -70,7 +70,7 @@ export const update = async(req,res)=>{           //API will udpate one user as 
         }
 
         const updatedData = await User.findByIdAndUpdate(id,req.body,{new:true});
-        res.status(200).json(updatedData);
+        res.status(200).json({msg:"User updated successfully"});
 
 
     } catch (error) {

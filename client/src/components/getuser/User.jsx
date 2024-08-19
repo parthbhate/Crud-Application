@@ -1,57 +1,71 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 import axios from "axios";
 import "./user.css";
 
 const User = () => {
-  const [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
     // here we are fetching the api  (getting all the data from database )
 
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/api/getall");
-      setUsers(response.data);
+    const response = await axios.get(`http://localhost:3000/api/getall`);
+    setUsers(response.data);
     };
     fetchData();
-  },[]);
+    },[]);
 
-  return (
+const deleteUser = async(userId) =>{
+await axios.delete(`http://localhost:3000/api/delete/${userId}`)
+.then((response)=>{
+    setUsers((prevUser)=>prevUser.filter((user)=>user._id !== userId))
+   // console.log(response);
+   toast.success(response.data.msg,{position:'top-right'})
+    
+})
+.catch((error)=>{
+    console.log(error);
+})
+}
+
+    return (
     <div className="userTable">
-      <Link to={"/add"} className="addButton">
+    <Link to={"/add"} className="addButton">
         Add User
-      </Link>
-      <table border={1} cellPadding={10} cellSpacing={0}>
+    </Link>
+    <table border={1} cellPadding={10} cellSpacing={0}>
         <thead>
-          <tr>
+        <tr>
             <th>S.No</th>
             <th> name</th>
             <th> Email</th>
             <th> Action </th>
-          </tr>
+        </tr>
         </thead>
         <tbody>
-          {
+        {
             users.map((user, index) =>{
             return (
-              <tr>
-                <td>1.</td>
-                <td>jhone Doe</td>
-                <td>jhoneDoe@gmail.com </td>
+            <tr key={user._id}>
+                <td>{index +1}</td>
+                <td>{user.fname} {user.lname}</td>
+                <td>{user.email}</td>
                 <td className=" actionButton">
-                  <button>
+                <button onClick={()=> deleteUser(user._id)}>
                     <i className="fa-solid fa-trash"></i>
-                  </button>
-                  <Link to={"/edit"}>
+                </button>
+                <Link to={`/edit/`+user._id}>
                     <i className="fa-solid fa-pen-to-square"></i>{" "}
-                  </Link>
+                </Link>
                 </td>
-              </tr>
+            </tr>
             );
-          })}
+        })}
         </tbody>
-      </table>
+    </table>
     </div>
-  );
+);
 };
 export default User;
