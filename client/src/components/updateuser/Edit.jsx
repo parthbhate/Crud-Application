@@ -35,7 +35,7 @@ useEffect(()=>{
 
 const submitForm = async(e)=>{
     e.preventDefault();
-    await axios.put(`http://localhost:3000/api/update/${id}`, user)
+    await axios.put(`https://crud-application-backend-j3l3.onrender.com/api/update/${id}`, user)
     .then((response)=>{
         toast.success(response.data.msg,{position:"top-right"})
         navigate("/")                                              // here this will navigate to home page 
