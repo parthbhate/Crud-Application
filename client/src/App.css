@@ -1,5 +1,12 @@
+
+.ball {
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.7;
+  }
+
 html, body {
-    width: 100%;
+    width: auto;
     height:100%;
   }
   
@@ -21,8 +28,4 @@ html, body {
       }
   }
 
- .ball {
-  position: absolute;
-  border-radius: 100%;
-  opacity: 0.7;
-}
+ 
