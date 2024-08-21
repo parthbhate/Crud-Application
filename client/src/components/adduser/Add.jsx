@@ -39,8 +39,10 @@ const Add = () => {
   return (
 
     <div className='addUser'>
-        <Link to={"/"}>Back</Link>
-        <h3>Add new user </h3>
+        <Link to={"/"}className="backbutton">
+        <i class="fa-solid fa-arrow-left"></i>
+       </Link>
+        <h2>Add new user </h2>
         <form className='addUserForm' onSubmit={submitForm}>
             <div className="inputgroup">
                 <label htmlFor='fname'>First Name</label>

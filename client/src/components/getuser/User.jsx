@@ -32,12 +32,15 @@ await axios.delete(`http://localhost:3000/api/delete/${userId}`)
 
     return (
     <div className="userTable">
+    <h1> ✨Crud Application✨</h1>
     <Link to={"/add"} className="addButton">
         Add User
     </Link>
     <table border={1} cellPadding={10} cellSpacing={0}>
         <thead>
+        
         <tr>
+        
             <th>S.No</th>
             <th> name</th>
             <th> Email</th>

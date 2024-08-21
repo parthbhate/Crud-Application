@@ -1,39 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+
+
 .userTable{
     width:60%;
-    background-color: white;
+    align-items: center;
+    align-content: center auto;
+    background-color: rgba(215, 225, 39, 0.971);
     box-shadow:1px 1px 8px rgba(13, 145, 30, 0.562);
-    border-radius: 5px;
-    margin:50px auto;
+    border-radius: 30px;
+    margin: 60px auto;
     padding: 50px;
+    
 }
 .addButton{
+    margin-top: auto;
+    margin-bottom: 50px;
     text-decoration: none;
     background-color:#14b43e ;
-    color: #fff;
+    color: #140303;
     font-weight:500;
     box-shadow: 0px 0px 0px 0px rgb(0, 0, 0);
     border-radius:10px ;
     padding:10px;
+    
 }
 
+.userTable h1{
+    margin-top: 1px;
+    text-align: center;
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    table-layout: fixed;
+}
 .userTable table{
 
     width:100%;
-    margin-top : 30px ;
+    margin-top : 20px ;
     border-collapse: collapse;
+    table-layout: fixed;
+    border-radius: 50px;
 
 }
 
 .userTable table thead  th{
-    background-color: yellowgreen;
-    color:bla;
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     padding:10px;
+
+    
+    
 }
 
 .userTable table tbody td{
 
     padding:10px;
     text-align:center;
+    border-radius: 0px;
+    background-color: white;
 
 }
 

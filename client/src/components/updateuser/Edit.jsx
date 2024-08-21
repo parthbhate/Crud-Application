@@ -44,8 +44,9 @@ const submitForm = async(e)=>{
 
   return (
     <div className='addUser'>
-    <Link to={"/"}>Back</Link>
-    <h3>Update user </h3>
+    <Link to={"/"}className="backbutton"><i class="fa-solid fa-arrow-left"></i>
+    </Link>
+    <h2>Update user </h2>
 {/* here on line no. 54 we are using the submitform  */}
     <form className='addUserForm' onSubmit={submitForm}>   
         <div className="inputgroup">
