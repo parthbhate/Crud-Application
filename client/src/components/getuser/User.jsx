@@ -11,7 +11,7 @@ const User = () => {
     // here we are fetching the api  (getting all the data from database )
 
     const fetchData = async () => {
-    const response = await axios.get(`http://localhost:3000/api/getall`);
+    const response = await axios.get(`https://crud-application-backend-j3l3.onrender.com/api/getall`);
     setUsers(response.data);
     };
     fetchData();

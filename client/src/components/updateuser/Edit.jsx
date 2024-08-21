@@ -21,7 +21,7 @@ const Edit = () => {
     
 }
 useEffect(()=>{
-    axios.get(`http://localhost:3000/api/getone/${id}`)    /// here we getting the api data that we want to update.
+    axios.get(`https://crud-application-backend-j3l3.onrender.com/api/getone/${id}`)    /// here we getting the api data that we want to update.
     .then((response)=>{
       //   console.log(response); // to get data on console
     setUser(response.data);
