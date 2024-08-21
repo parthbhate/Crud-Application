@@ -41,7 +41,7 @@ await axios.delete(`http://localhost:3000/api/delete/${userId}`)
             <th>S.No</th>
             <th> name</th>
             <th> Email</th>
-            <th> Action </th>
+            <th> Actions </th>
         </tr>
         </thead>
         <tbody>
