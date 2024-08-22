@@ -18,7 +18,7 @@ The application allows users to perform basic operations on a list of items.
 
 ![App Screenshot](https://github.com/parthbhate/Crud-Application/blob/main/crudApp.png?raw=true)
 
-![App Screenshott](https://github.com/parthbhate/Crud-Application/blob/main/newuser.png?raw=true)
+![App Screenshott](https://github.com/parthbhate/Crud-Application/blob/main/newuserr.png?raw=true)
 ## Tech used 🧑‍💻⚙️
 
 
