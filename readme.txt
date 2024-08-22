@@ -49,4 +49,4 @@ Backend
 
 
 
-![image alt] (https://github.com/parthbhate/Crud-Application/blob/main/crudApp.png?raw=true)
+![image alt](https://github.com/parthbhate/Crud-Application/blob/main/crudApp.png?raw=true)
