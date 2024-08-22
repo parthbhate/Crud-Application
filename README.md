@@ -57,7 +57,7 @@ Install my-project with npm
 ```bash
     3.start backend : npm start
   ```
-##  **Clone the repository:**</>😺
+##  **Clone the repository:**</>😺 
 
   ```bash
    git clone https://github.com/parthbhate/Crud-Application.git
